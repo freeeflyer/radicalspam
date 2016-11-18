@@ -18,9 +18,10 @@ RUN echo "Installing RadicalSpam" && \
   ln -sf /usr/share/rs /var/rs
 
 
-ENV PATH=/var/rs/etc/scripts:$PATH \
+ENV PATH=/var/rs/etc/scripts:$PATH 
+    
 
-
+VOLUME ["/data" ]
 
 WORKDIR $RS_HOME
 
