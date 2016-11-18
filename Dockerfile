@@ -2,7 +2,7 @@ FROM alpine:latest
 
 MAINTAINER Nicolas Zagulajew (freeeflyer) <docker.com@xoop.org>
 
-ENV ES_HOME=/var/rs
+ENV RS_HOME=/var/rs
 
 RUN echo "Downloading RadicalSpam"
 ADD http://download.radicalspam.org/releases/radicalspam-server-stable.tar.gz /tmp/radicalspam-server-stable.tar.gz
@@ -21,9 +21,8 @@ RUN echo "Installing RadicalSpam" && \
 ENV PATH=/var/rs/etc/scripts:$PATH \
 
 
-VOLUME ["/data","/conf"]
 
-WORKDIR $ES_HOME
+WORKDIR $RS_HOME
 
 CMD ["/start"]
 
